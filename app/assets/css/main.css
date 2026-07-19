@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/* Local Helvetica Neue — served from /public/fonts/helvetica-neue */
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueLight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueRoman.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueMedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueItalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueMediumItalic.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme inline {
+  --font-sans: "HelveticaNeue", sans-serif;
+  --font-ysabeau: "Ysabeau", sans-serif;
+  --font-karla: "Karla", sans-serif;
+
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-tertiary: var(--color-tertiary);
+  --color-background: var(--color-background);
+  --color-light: var(--color-light);
+
+  --breakpoint-xs: 28rem;
+}
+
+:root {
+  --color-primary: #000000;
+  --color-secondary: #4c4c4c;
+  --color-tertiary: #838383;
+  --color-background: #fff;
+  --color-light: #8b8b8b;
+}
+
+::selection {
+  background: #d1d1d1;
+}
+
+/* [data-theme="dark"] {
+  --color-primary: #ffffff;
+  --color-secondary: #c3c3c3;
+  --color-tertiary: #8b8b8b;
+  --color-background: #000000;
+  --color-light: #1a1c22;
+} */
+
+/* [data-theme="sunset"] {
+  --color-primary: #ffeac0;
+  --color-secondary: #c7b47a;
+  --color-tertiary: #8b8b8b;
+  --color-background: #0b0905;
+  --color-light: rgb(98, 77, 19);
+} */
+
+* {
+  scrollbar-width: none;
+}
+
+html {
+  width: 100%;
+  height: 100dvh;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+}
+
+body {
+  color: var(--color-primary);
+  background: var(--color-background);
+  transition: all 0.25s ease-out;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes sway {
+  0% {
+    transform: rotate(28deg);
+  }
+  50% {
+    transform: rotate(31deg);
+  }
+  100% {
+    transform: rotate(28deg);
+  }
+}
+
+.animate-sway {
+  animation: sway 4s ease-in-out infinite;
+}
+
+/* App-shell entrance (reliable, JS-free) — replaces the motion.main enter. */
+@keyframes app-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-app-enter {
+  animation: app-enter 1s cubic-bezier(0.26, 1, 0.6, 1) both;
+}
