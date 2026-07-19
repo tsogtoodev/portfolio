@@ -5,10 +5,11 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
-  // Deploy target: Cloudflare Pages. Nitro builds to ./dist with a _worker.js
-  // for the SSR/server routes and static assets alongside it.
+  // Deploy target: Cloudflare Workers with static assets. Nitro builds to
+  // .output/ — the server entry at .output/server/index.mjs and static assets
+  // in .output/public/ (wired up in wrangler.jsonc).
   nitro: {
-    preset: "cloudflare-pages",
+    preset: "cloudflare_module",
   },
 
   modules: ["@nuxt/image", "@nuxt/fonts", "motion-v/nuxt"],

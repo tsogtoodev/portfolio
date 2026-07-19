@@ -10,8 +10,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "cf:preview": "nuxt build && wrangler pages dev ./dist",
-    "cf:deploy": "nuxt build && wrangler pages deploy ./dist"
+    "cf:preview": "nuxt build && wrangler dev",
+    "cf:deploy": "nuxt build && wrangler deploy"
   },
   "dependencies": {
     "clsx": "^2.1.1",
