@@ -46,7 +46,8 @@ export default defineNuxtConfig({
         { name: "viewport", content: "width=device-width, initial-scale=1.0" },
       ],
       link: [
-        { rel: "shortcut icon", href: "/favicon.ico" },
+        { rel: "icon", type: "image/png", href: "/profile.png" },
+        { rel: "apple-touch-icon", href: "/profile.png" },
         { rel: "prefetch", fetchpriority: "high", href: "/main/cside.webp" },
         {
           rel: "prefetch",
