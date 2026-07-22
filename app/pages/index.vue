@@ -66,14 +66,6 @@ onUnmounted(() => {
             </a>
             <a
               class="text-tertiary hover:text-primary cursor-pointer whitespace-nowrap transition-colors duration-100"
-              href="https://x.com/tsogtoodev"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              twitter (x)
-            </a>
-            <a
-              class="text-tertiary hover:text-primary cursor-pointer whitespace-nowrap transition-colors duration-100"
               href="https://www.linkedin.com/in/tsogtbayar-davaadorj-79b975354/"
               target="_blank"
               rel="noopener noreferrer"
